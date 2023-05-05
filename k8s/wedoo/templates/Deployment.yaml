@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wedoo-app
-        image: registry.gitlab.com/blablabla123-cell/we_do_osm_flutter/test:fa90c095f035117e6b3cdd9fd5e27c83602166a3
+        image: registry.gitlab.com/blablabla123-cell/we_do_osm_flutter/test:f901e894bd9fd8ed51285b9b1a6074c6a625165b
         ports:
         - containerPort: 3000
       imagePullSecrets:
