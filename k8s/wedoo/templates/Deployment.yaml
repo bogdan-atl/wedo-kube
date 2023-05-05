@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: wedoo-app
-        image: vadim26rus/wedoo:0.4-alpine
+        image: registry.gitlab.com/blablabla123-cell/we_do_osm_flutter/test:fa90c095f035117e6b3cdd9fd5e27c83602166a3
         ports:
         - containerPort: 3000
       imagePullSecrets:
-      - name: my-dockerhub-secret
+      - name: gitlab-credentials
        
