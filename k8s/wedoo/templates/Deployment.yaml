@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: wedoo
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: wedoo-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: wedoo-app
-        image: registry.gitlab.com/blablabla123-cell/we_do_osm_flutter/test:f901e894bd9fd8ed51285b9b1a6074c6a625165b
+        image: registry.gitlab.com/blablabla123-cell/we_do_osm_flutter/test:046654efa41b82bff546891da64788f85f5ac65c
         ports:
         - containerPort: 3000
       imagePullSecrets:
