@@ -1,4 +1,4 @@
-replicas: 5
+replicas: 2
 wedoo:
   image: registry.gitlab.com/blablabla123-cell/we_do_osm_flutter/test:cf59f63f8244ea8c2b46625faea7d2fdd7808f8c
 imagePullSecrets: gitlab-credentials
