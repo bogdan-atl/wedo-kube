@@ -1,0 +1,99 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  namespace: argocd
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  tls:
+  - secretName: argocd-tls-secret
+  rules:
+  - http:
+      paths:
+      - path: /api/v1/settings
+        pathType: Exact
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/clusters
+        pathType: Exact
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/applications
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/account
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/session
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/stream
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/repocreds
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/projects
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/repositories
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/v1/
+        pathType: Exact
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /api/version
+        pathType: Exact
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443 
